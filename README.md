@@ -1,3 +1,5 @@
+render link --https://strategic-product-placement-analysis-i9mn.onrender.com/
+
 # Strategic Product Placement Analysis
 
 This folder arranges the completed Data Analytics project in a SmartBridge-style submission format.
