@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Story - Strategic Product Placement Analysis{% endblock %}
+
+{% block content %}
+<!-- Story Hero -->
+<section class="page-hero" id="storyHero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="hero-badge"><i class="bi bi-book"></i> Data Story</div>
+                <h1 class="page-title">Product Placement Story</h1>
+                <p class="page-subtitle">
+                    A three-scene narrative journey through our product placement analysis,
+                    from business overview to actionable recommendations.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                <a href="{{ tableau_url }}" target="_blank" class="btn btn-outline-custom" id="storyExternalBtn">
+                    <i class="bi bi-box-arrow-up-right"></i> Open in Tableau
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Story Scenes Overview -->
+<section class="story-scenes" id="storyScenesOverview">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="scene-card">
+                    <div class="scene-number">Scene 1</div>
+                    <div class="scene-icon"><i class="bi bi-building"></i></div>
+                    <h3>Business Overview</h3>
+                    <p>High-level view of total sales, category distribution, pricing landscape, and key performance indicators across the FMCG dataset.</p>
+                    <ul class="scene-items">
+                        <li><i class="bi bi-check2"></i> KPI Summary Cards</li>
+                        <li><i class="bi bi-check2"></i> Sales by Category</li>
+                        <li><i class="bi bi-check2"></i> Price Distribution</li>
+                        <li><i class="bi bi-check2"></i> Dataset Overview</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="scene-card active">
+                    <div class="scene-number">Scene 2</div>
+                    <div class="scene-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <h3>Position Analysis</h3>
+                    <p>Deep dive into how product position, foot traffic, promotions, and demographics influence sales performance.</p>
+                    <ul class="scene-items">
+                        <li><i class="bi bi-check2"></i> Position vs Sales</li>
+                        <li><i class="bi bi-check2"></i> Foot Traffic Impact</li>
+                        <li><i class="bi bi-check2"></i> Promotion Effects</li>
+                        <li><i class="bi bi-check2"></i> Demographic Patterns</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="scene-card">
+                    <div class="scene-number">Scene 3</div>
+                    <div class="scene-icon"><i class="bi bi-lightbulb-fill"></i></div>
+                    <h3>Recommendations</h3>
+                    <p>Actionable insights and strategic recommendations based on the data analysis for optimizing product placement.</p>
+                    <ul class="scene-items">
+                        <li><i class="bi bi-check2"></i> Placement Strategy</li>
+                        <li><i class="bi bi-check2"></i> Pricing Optimization</li>
+                        <li><i class="bi bi-check2"></i> Promo Targeting</li>
+                        <li><i class="bi bi-check2"></i> Season Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tableau Story Embed -->
+<section class="tableau-section" id="tableauStorySection">
+    <div class="container-fluid px-4">
+        <div class="tableau-container" data-aos="fade-up">
+            <div class="tableau-embed-wrapper" id="tableauStoryEmbed"
+                 data-tableau-url="{{ tableau_url }}">
+                <iframe src="{{ tableau_url }}?:embed=y&:display_count=n&:showVizHome=n"
+                        title="Strategic Product Placement Story"
+                        class="w-100 h-100 border-0"
+                        allowfullscreen
+                        loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Findings -->
+<section class="findings-section" id="findingsSection">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-search"></i> Findings</span>
+            <h2 class="section-title">Key Story Findings</h2>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="finding-card">
+                    <div class="finding-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
+                    <h4>Front of Store Dominates</h4>
+                    <p>Products positioned at the front of the store consistently achieve higher average sales volumes compared to aisle and end-cap placements.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="finding-card">
+                    <div class="finding-icon"><i class="bi bi-megaphone-fill"></i></div>
+                    <h4>Promotions Drive Growth</h4>
+                    <p>Promoted products show a significant sales lift, with promotional campaigns increasing average sales volume across all categories.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="finding-card">
+                    <div class="finding-icon"><i class="bi bi-people-fill"></i></div>
+                    <h4>Demographics Matter</h4>
+                    <p>Consumer demographics play a critical role in sales patterns, with certain segments showing stronger purchasing behavior.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="finding-card">
+                    <div class="finding-icon"><i class="bi bi-graph-up"></i></div>
+                    <h4>Foot Traffic Correlates</h4>
+                    <p>Higher foot traffic areas correlate with increased sales, suggesting strategic placement in high-traffic zones is crucial.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

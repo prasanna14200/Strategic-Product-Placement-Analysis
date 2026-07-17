@@ -1,0 +1,36 @@
+# Local Environment Configurations
+.env
+.env.local
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Large Datasets and Data Pipeline outputs
+data/raw/
+data/cleaned/
+*.hyper
+*.csv
+*.xlsx
+*.docx
+!Handouts.xlsx
+!Notes.docx
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets
+.kaggle/
+kaggle.json
+
+# Tableau build temp
+tableau/_build/
+
+# Logs
+*.log

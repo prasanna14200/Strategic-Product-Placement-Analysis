@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Strategic Product Placement Analysis{% endblock %}
+
+{% block content %}
+<!-- Dashboard Hero -->
+<section class="page-hero" id="dashboardHero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="hero-badge"><i class="bi bi-speedometer2"></i> Interactive Dashboard</div>
+                <h1 class="page-title">Product Placement Dashboard</h1>
+                <p class="page-subtitle">
+                    Explore interactive Tableau visualizations analyzing the impact of
+                    product positioning, pricing, promotions, and consumer demographics on sales.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                <a href="{{ tableau_url }}" target="_blank" class="btn btn-outline-custom" id="dashboardExternalBtn">
+                    <i class="bi bi-box-arrow-up-right"></i> Open in Tableau
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Bar -->
+<section class="filter-section" id="filterSection">
+    <div class="container">
+        <div class="filter-bar" data-aos="fade-up">
+            <div class="filter-header">
+                <i class="bi bi-funnel-fill"></i>
+                <span>Dashboard Filters</span>
+                <small class="text-muted">(Available within the Tableau embed)</small>
+            </div>
+            <div class="filter-chips">
+                <span class="filter-chip active"><i class="bi bi-tag"></i> Product Category</span>
+                <span class="filter-chip"><i class="bi bi-geo-alt"></i> Product Position</span>
+                <span class="filter-chip"><i class="bi bi-megaphone"></i> Promotion</span>
+                <span class="filter-chip"><i class="bi bi-calendar-event"></i> Season</span>
+                <span class="filter-chip"><i class="bi bi-people"></i> Demographics</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tableau Dashboard Embed -->
+<section class="tableau-section" id="tableauDashboardSection">
+    <div class="container-fluid px-4">
+        <div class="tableau-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="tableau-embed-wrapper" id="tableauDashboardEmbed"
+                 data-tableau-url="{{ tableau_url }}">
+                <iframe src="{{ tableau_url }}?:embed=y&:display_count=n&:showVizHome=n"
+                        title="Strategic Product Placement Dashboard"
+                        class="w-100 h-100 border-0"
+                        allowfullscreen
+                        loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Visualization Descriptions -->
+<section class="viz-descriptions" id="vizDescriptions">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-list-check"></i> Visualizations</span>
+            <h2 class="section-title">Dashboard Components</h2>
+            <p class="section-subtitle">8 core visualizations plus KPI cards</p>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="viz-desc-card"><div class="viz-number">01</div><h4>Avg Sales Volume vs Product Category</h4><p>Bar chart comparing average sales across Food, Electronics, and Clothing.</p><span class="viz-type"><i class="bi bi-bar-chart-fill"></i> Bar Chart</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="viz-desc-card"><div class="viz-number">02</div><h4>Avg Sales by Category x Position</h4><p>Grouped bar chart showing position impact within each category.</p><span class="viz-type"><i class="bi bi-diagram-3-fill"></i> Grouped Bar</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="viz-desc-card"><div class="viz-number">03</div><h4>Avg Sales by Category x Season</h4><p>Stacked chart revealing seasonal patterns across categories.</p><span class="viz-type"><i class="bi bi-layers-fill"></i> Stacked Bar</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="viz-desc-card"><div class="viz-number">04</div><h4>Competitor Price vs Price</h4><p>Scatter plot of product vs competitor pricing.</p><span class="viz-type"><i class="bi bi-bullseye"></i> Scatter Plot</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="viz-desc-card"><div class="viz-number">05</div><h4>Consumer Demographics vs Sales</h4><p>Sales performance across demographic segments.</p><span class="viz-type"><i class="bi bi-people-fill"></i> Bar Chart</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="viz-desc-card"><div class="viz-number">06</div><h4>Foot Traffic vs Avg Sales</h4><p>Foot traffic level correlation with sales.</p><span class="viz-type"><i class="bi bi-graph-up-arrow"></i> Bar Chart</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="viz-desc-card"><div class="viz-number">07</div><h4>Product Category vs Price</h4><p>Price distributions across product categories.</p><span class="viz-type"><i class="bi bi-currency-dollar"></i> Box Plot</span></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="800">
+                <div class="viz-desc-card"><div class="viz-number">08</div><h4>Promotion Impact on Sales</h4><p>Promotional campaign effects on pricing and volume.</p><span class="viz-type"><i class="bi bi-megaphone-fill"></i> Dual Axis</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

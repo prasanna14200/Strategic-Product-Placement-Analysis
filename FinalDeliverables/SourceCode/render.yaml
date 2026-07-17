@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: strategic-product-placement-analysis
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: TABLEAU_DASHBOARD_URL
+        value: https://tableau.com
+      - key: TABLEAU_STORY_URL
+        value: https://tableau.com

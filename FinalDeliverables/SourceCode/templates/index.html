@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Strategic Product Placement Analysis{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" id="heroSection">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-badge">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    Data-Driven Insights
+                </div>
+                <h1 class="hero-title">
+                    Strategic <span class="text-gradient">Product Placement</span> Analysis
+                </h1>
+                <p class="hero-subtitle">
+                    Leveraging advanced data analytics and Tableau visualizations to uncover
+                    the impact of product positioning on sales performance in the FMCG sector.
+                    Optimize shelf placement, maximize revenue, and understand consumer behavior.
+                </p>
+                <div class="hero-actions">
+                    <a href="/dashboard" class="btn btn-primary-custom btn-lg" id="heroDashboardBtn">
+                        <i class="bi bi-speedometer2"></i> View Dashboard
+                    </a>
+                    <a href="/story" class="btn btn-outline-custom btn-lg" id="heroStoryBtn">
+                        <i class="bi bi-play-circle"></i> View Story
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="hero-visual">
+                    <div class="hero-chart-card">
+                        <div class="chart-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                        <div class="chart-label">Sales Analytics</div>
+                        <div class="chart-bars">
+                            <div class="chart-bar" style="height: 40%"></div>
+                            <div class="chart-bar" style="height: 65%"></div>
+                            <div class="chart-bar active" style="height: 90%"></div>
+                            <div class="chart-bar" style="height: 55%"></div>
+                            <div class="chart-bar" style="height: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator">
+        <a href="#kpiSection"><i class="bi bi-chevron-double-down"></i></a>
+    </div>
+</section>
+
+<!-- KPI Section -->
+<section class="kpi-section" id="kpiSection">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-graph-up"></i> Key Metrics</span>
+            <h2 class="section-title">Performance at a Glance</h2>
+            <p class="section-subtitle">Real-time KPIs derived from our comprehensive dataset analysis</p>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="kpi-card" id="kpiTotalRecords">
+                    <div class="kpi-icon"><i class="bi bi-database-fill"></i></div>
+                    <div class="kpi-value counter" data-target="{{ kpis.total_records }}">{{ kpis.total_records }}</div>
+                    <div class="kpi-label">Total Records</div>
+                    <div class="kpi-trend up"><i class="bi bi-arrow-up-right"></i> Dataset Size</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="kpi-card" id="kpiTotalSales">
+                    <div class="kpi-icon sales"><i class="bi bi-cart-check-fill"></i></div>
+                    <div class="kpi-value counter" data-target="{{ kpis.total_sales }}">{{ '{:,}'.format(kpis.total_sales) }}</div>
+                    <div class="kpi-label">Total Sales Volume</div>
+                    <div class="kpi-trend up"><i class="bi bi-arrow-up-right"></i> Units Sold</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="kpi-card" id="kpiAvgSales">
+                    <div class="kpi-icon avg"><i class="bi bi-bar-chart-line-fill"></i></div>
+                    <div class="kpi-value">{{ kpis.avg_sales }}</div>
+                    <div class="kpi-label">Avg Sales Volume</div>
+                    <div class="kpi-trend neutral"><i class="bi bi-dash-lg"></i> Per Product</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="kpi-card" id="kpiPromoRate">
+                    <div class="kpi-icon promo"><i class="bi bi-megaphone-fill"></i></div>
+                    <div class="kpi-value">{{ kpis.promo_rate }}%</div>
+                    <div class="kpi-label">Promotion Rate</div>
+                    <div class="kpi-trend up"><i class="bi bi-arrow-up-right"></i> Products on Promo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Insights Section -->
+<section class="insights-section" id="insightsSection">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-lightbulb"></i> Key Insights</span>
+            <h2 class="section-title">What the Data Reveals</h2>
+            <p class="section-subtitle">Discover critical patterns in product positioning and sales performance</p>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="insight-card">
+                    <div class="insight-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <h3 class="insight-title">Best Position</h3>
+                    <p class="insight-value">{{ kpis.best_position }}</p>
+                    <p class="insight-desc">
+                        Products placed at the <strong>{{ kpis.best_position }}</strong> position
+                        consistently outperform other placements in average sales volume.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="insight-card">
+                    <div class="insight-icon"><i class="bi bi-trophy-fill"></i></div>
+                    <h3 class="insight-title">Top Category</h3>
+                    <p class="insight-value">{{ kpis.top_category }}</p>
+                    <p class="insight-desc">
+                        The <strong>{{ kpis.top_category }}</strong> category leads in average
+                        sales volume, indicating strong consumer demand in this segment.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="insight-card">
+                    <div class="insight-icon"><i class="bi bi-people-fill"></i></div>
+                    <h3 class="insight-title">Top Demographic</h3>
+                    <p class="insight-value">{{ kpis.top_demographic }}</p>
+                    <p class="insight-desc">
+                        <strong>{{ kpis.top_demographic }}</strong> represent the highest-performing
+                        consumer segment, driving significant sales across categories.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section" id="featuresSection">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-stars"></i> Features</span>
+            <h2 class="section-title">Project Capabilities</h2>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-funnel-fill"></i></div>
+                    <h4>Data Cleaning</h4>
+                    <p>Automated pipeline for handling missing values, duplicates, outliers, and standardization.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-bar-chart-steps"></i></div>
+                    <h4>8+ Visualizations</h4>
+                    <p>Comprehensive Tableau charts including bar, scatter, treemap, KPI cards, and more.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-sliders"></i></div>
+                    <h4>Interactive Filters</h4>
+                    <p>Dynamic filters for Category, Position, Promotion, Season, and Demographics.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="bi bi-cloud-arrow-up-fill"></i></div>
+                    <h4>Tableau Public</h4>
+                    <p>Published to Tableau Public and embedded in a responsive Flask web application.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="ctaSection">
+    <div class="container">
+        <div class="cta-card" data-aos="zoom-in">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="cta-title">Ready to Explore the Data?</h2>
+                    <p class="cta-desc">
+                        Dive into our interactive Tableau dashboard to discover actionable insights
+                        about product placement strategies and their impact on sales.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="/dashboard" class="btn btn-primary-custom btn-lg" id="ctaDashboardBtn">
+                        <i class="bi bi-speedometer2"></i> Open Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

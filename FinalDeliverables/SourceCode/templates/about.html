@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}About - Strategic Product Placement Analysis{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="page-hero" id="aboutHero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="hero-badge"><i class="bi bi-info-circle"></i> About</div>
+                <h1 class="page-title">About This Project</h1>
+                <p class="page-subtitle">
+                    Understanding the strategic analysis behind product placement optimization
+                    in the FMCG retail sector.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Overview -->
+<section class="about-section" id="aboutOverview">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="lead">
+                    The <strong>Strategic Product Placement Analysis</strong> project investigates
+                    how product positioning within retail environments impacts sales performance
+                    in the Fast-Moving Consumer Goods (FMCG) sector.
+                </p>
+                <p>
+                    Using a comprehensive dataset from Kaggle, this project performs in-depth
+                    exploratory data analysis, creates interactive Tableau visualizations, and
+                    deploys a Flask web application to present findings in an accessible format.
+                </p>
+                <p>
+                    The analysis covers multiple dimensions including product position (Front of Store,
+                    End-cap, Aisle), pricing strategies, promotional campaigns, foot traffic patterns,
+                    consumer demographics, and seasonal effects on sales volume.
+                </p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="bi bi-database-fill"></i></div>
+                        <div>
+                            <h5>Dataset</h5>
+                            <p>Kaggle: Impact of Product Positioning on Sales by Amit V Kulkarni</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="bi bi-tools"></i></div>
+                        <div>
+                            <h5>Technology Stack</h5>
+                            <p>Python, Flask, Pandas, NumPy, Tableau, Bootstrap 5, HTML/CSS/JS</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="bi bi-bar-chart-fill"></i></div>
+                        <div>
+                            <h5>Visualizations</h5>
+                            <p>8+ interactive charts, KPI cards, dashboard, and 3-scene story</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                        <div>
+                            <h5>Program</h5>
+                            <p>SmartBridge Externship - Data Analytics with Tableau</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Methodology -->
+<section class="methodology-section" id="methodologySection">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-gear-fill"></i> Methodology</span>
+            <h2 class="section-title">Our Approach</h2>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="method-card">
+                    <div class="method-step">1</div>
+                    <h4>Data Collection</h4>
+                    <p>Downloaded the product positioning dataset from Kaggle containing 500+ records with 9 key variables.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="method-card">
+                    <div class="method-step">2</div>
+                    <h4>Data Cleaning</h4>
+                    <p>Handled missing values, removed duplicates, standardized formats, validated types, and capped outliers.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="method-card">
+                    <div class="method-step">3</div>
+                    <h4>Analysis & Viz</h4>
+                    <p>Performed EDA with Python and created 8+ interactive Tableau visualizations with calculated fields.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="method-card">
+                    <div class="method-step">4</div>
+                    <h4>Deployment</h4>
+                    <p>Built a Flask web app embedding the Tableau dashboard and story, published to Tableau Public.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dataset Variables -->
+<section class="variables-section" id="variablesSection">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge"><i class="bi bi-table"></i> Dataset</span>
+            <h2 class="section-title">Dataset Variables</h2>
+        </div>
+        <div class="table-responsive mt-4" data-aos="fade-up" data-aos-delay="200">
+            <table class="table table-dark-custom" id="variablesTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Variable</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Product_Position</td><td>Categorical</td><td>Location within the store</td><td>Front of Store, End-cap, Aisle</td></tr>
+                    <tr><td>2</td><td>Price</td><td>Numeric</td><td>Product price</td><td>Continuous ($)</td></tr>
+                    <tr><td>3</td><td>Competitor_Price</td><td>Numeric</td><td>Competitor's product price</td><td>Continuous ($)</td></tr>
+                    <tr><td>4</td><td>Promotion</td><td>Categorical</td><td>Promotional campaign status</td><td>Yes, No</td></tr>
+                    <tr><td>5</td><td>Foot_Traffic</td><td>Categorical</td><td>Store foot traffic level</td><td>High, Medium, Low</td></tr>
+                    <tr><td>6</td><td>Consumer_Demographics</td><td>Categorical</td><td>Consumer segment</td><td>Young adults, Families, Seniors, College students</td></tr>
+                    <tr><td>7</td><td>Product_Category</td><td>Categorical</td><td>Product category</td><td>Food, Electronics, Clothing</td></tr>
+                    <tr><td>8</td><td>Season</td><td>Categorical</td><td>Seasonal product flag</td><td>Yes, No</td></tr>
+                    <tr><td>9</td><td>Sales_Volume</td><td>Numeric</td><td>Units sold</td><td>Continuous (units)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Contact / Credits -->
+<section class="credits-section" id="creditsSection">
+    <div class="container">
+        <div class="credits-card" data-aos="zoom-in">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3>Project Credits</h3>
+                    <p>
+                        <strong>Dataset:</strong> "Impact of Product Positioning on Sales" by Amit V Kulkarni (Kaggle)<br>
+                        <strong>License:</strong> Apache 2.0<br>
+                        <strong>Program:</strong> SmartBridge Externship - Data Analytics with Tableau<br>
+                        <strong>Tools:</strong> Python, Flask, Tableau Desktop, Tableau Public
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="https://www.kaggle.com/datasets/amitvkulkarni/impact-of-product-positioning-on-sales"
+                       target="_blank" class="btn btn-primary-custom" id="datasetLink">
+                        <i class="bi bi-database"></i> View Dataset
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
